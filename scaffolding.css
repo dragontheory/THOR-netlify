@@ -1,9 +1,29 @@
+/* https://dev.to/jaredcwhite/custom-elements-everywhere-for-page-layout-parts-i-and-ii-438p */
+:root {
+  --app-display: grid;
+  --app-grid-template-columns: 1fr 1fr 1fr;
+  --app-grid-template-rows: auto 1fr auto;
+  --app-gap: 20x 20px;
+  --app-height: 100vh;
+  --app-width: 100vw;
+  --app-margin: 0;
+  --app-padding: 0;
+  --app-overflow: hidden;
+  --app-padding: 10px;
+
+  --component-padding: 10px;
+  --component-display: grid;  
+  --component-header-footer-gap: 0 0;
+  --component-home-gap: 20px 20px;
+  --component-gap: 0 0;
+  --component-content-overflow: auto;
+}
+
 page-container {
-  display: grid;
+  display: var(--app-display);
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
   gap: 20px 20px;
-  grid-auto-flow: row;
   grid-template-areas:
     "page-header page-header page-header"
     "page-main   page-main   page-main"
@@ -15,7 +35,6 @@ page-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "page-header-left page-header-center page-header-right";
   grid-area: page-header;
 }
@@ -25,7 +44,6 @@ page-header-left {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: page-header-left;
 }
@@ -35,7 +53,6 @@ page-header-center {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: page-header-center;
   justify-items: center;
@@ -47,7 +64,6 @@ page-header-right {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: page-header-right;
   justify-items: right;
@@ -58,7 +74,6 @@ page-footer {
   grid-template-columns: auto 1fr auto;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "page-footer-left page-footer-center page-footer-right";
   grid-area: page-footer;
 }
@@ -68,7 +83,6 @@ page-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: page-footer-left;
   }
@@ -77,7 +91,6 @@ page-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: page-footer-center;
     justify-items: center;
@@ -87,7 +100,6 @@ page-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: page-footer-right;
     justify-items: right;
@@ -97,8 +109,7 @@ page-main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
-  gap: 20px 20px;
-  grid-auto-flow: row;
+  gap: 0 20px;
   grid-template-areas:
     "panel-01-header  panel-02-header  panel-03-header  panel-04-header  panel-05-header  panel-06-header  panel-07-header"
     "panel-01-content panel-02-content panel-03-content panel-04-content panel-05-content panel-06-content panel-07-content"
@@ -111,7 +122,6 @@ panel-01-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-01-header-left panel-01-header-center panel-01-header-right";
   grid-area: panel-01-header;
 }
@@ -123,7 +133,6 @@ panel-01-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-01-header-center;
     justify-items: center;
@@ -133,7 +142,6 @@ panel-01-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-01-header-right;
     justify-items: right;
@@ -143,7 +151,6 @@ panel-01-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-01-content;
 }
@@ -152,7 +159,6 @@ panel-01-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-01-footer-left panel-01-footer-center panel-01-footer-right";
   grid-area: panel-01-footer;
 }
@@ -164,7 +170,6 @@ panel-01-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-01-footer-center;
     justify-items: center;
@@ -174,7 +179,6 @@ panel-01-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-01-footer-right;
     justify-items: right;
@@ -185,7 +189,6 @@ panel-02-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-02-header-left panel-02-header-center panel-02-header-right";
   grid-area: panel-02-header;
 }
@@ -197,7 +200,6 @@ panel-02-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-02-header-center;
     justify-items: center;
@@ -207,7 +209,6 @@ panel-02-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-02-header-right;
     justify-items: right;
@@ -217,7 +218,6 @@ panel-02-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-02-content;
 }
@@ -226,7 +226,6 @@ panel-02-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-02-footer-left panel-02-footer-center panel-02-footer-right";
   grid-area: panel-02-footer;
 }
@@ -235,7 +234,6 @@ panel-02-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-02-footer-left;
   }
@@ -244,7 +242,6 @@ panel-02-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-02-footer-center;
     justify-items: center;
@@ -254,7 +251,6 @@ panel-02-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-02-footer-right;
     justify-items: right;
@@ -265,7 +261,6 @@ panel-03-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-03-header-left panel-03-header-center panel-03-header-right";
   grid-area: panel-03-header;
 }
@@ -274,7 +269,6 @@ panel-03-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-header-left;
   }
@@ -283,7 +277,6 @@ panel-03-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-header-center;
     justify-items: center;
@@ -293,7 +286,6 @@ panel-03-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-header-right;
     justify-items: right;
@@ -304,7 +296,6 @@ panel-03-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-03-content;
 }
@@ -313,7 +304,6 @@ panel-03-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-03-footer-left panel-03-footer-center panel-03-footer-right";
   grid-area: panel-03-footer;
 }
@@ -322,7 +312,6 @@ panel-03-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-footer-left;
   }
@@ -331,7 +320,6 @@ panel-03-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-footer-center;
     justify-items: center;
@@ -341,7 +329,6 @@ panel-03-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-03-footer-right;
     justify-items: right;
@@ -352,7 +339,6 @@ panel-04-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-04-header-left panel-04-header-center panel-04-header-right";
   grid-area: panel-04-header;
 }
@@ -361,7 +347,6 @@ panel-04-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-header-left;
   }
@@ -370,7 +355,6 @@ panel-04-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-header-right;
     justify-items: center;
@@ -380,7 +364,6 @@ panel-04-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-header-center;
     justify-items: right;
@@ -390,7 +373,6 @@ panel-04-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-04-content;
 }
@@ -399,7 +381,6 @@ panel-04-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-04-footer-left panel-04-footer-center panel-04-footer-right";
   grid-area: panel-04-footer;
 }
@@ -408,7 +389,6 @@ panel-04-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-footer-left;
   }
@@ -417,7 +397,6 @@ panel-04-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-footer-center;
     justify-items: center;
@@ -427,7 +406,6 @@ panel-04-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-04-footer-right;
     justify-items: right;
@@ -438,7 +416,6 @@ panel-05-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-05-header-left panel-05-header-center panel-05-header-right";
   grid-area: panel-05-header;
 }
@@ -447,8 +424,7 @@ panel-05-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
-    grid-template-areas: ".";
+     grid-template-areas: ".";
     grid-area: panel-05-header-left;
   }
   panel-05-header-center {
@@ -456,7 +432,6 @@ panel-05-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-05-header-center;
     justify-items: center;
@@ -466,7 +441,6 @@ panel-05-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-05-header-right;
     justify-items: right;
@@ -477,7 +451,6 @@ panel-05-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-05-content;
 }
@@ -486,7 +459,6 @@ panel-05-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-05-footer-left panel-05-footer-center panel-05-footer-right";
   grid-area: panel-05-footer;
 }
@@ -495,7 +467,6 @@ panel-05-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-05-footer-left;
   }
@@ -504,7 +475,6 @@ panel-05-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-05-footer-center;
     justify-items: center;
@@ -514,7 +484,6 @@ panel-05-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-05-footer-right;
     justify-items: right;
@@ -525,7 +494,6 @@ panel-06-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-06-header-left panel-06-header-center panel-06-header-right";
   grid-area: panel-06-header;
 }
@@ -534,7 +502,6 @@ panel-06-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-header-left;
   }
@@ -543,7 +510,6 @@ panel-06-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-header-center;
     justify-items: center;
@@ -553,7 +519,6 @@ panel-06-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-header-right;
     justify-items: right;
@@ -563,7 +528,6 @@ panel-06-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-06-content;
 }
@@ -572,7 +536,6 @@ panel-06-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-06-footer-left panel-06-footer-center panel-06-footer-right";
   grid-area: panel-06-footer;
 }
@@ -581,7 +544,6 @@ panel-06-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-footer-left;
   }
@@ -590,7 +552,6 @@ panel-06-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-footer-center;
     justify-items: center;
@@ -600,7 +561,6 @@ panel-06-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-06-footer-right;
     justify-items: right;
@@ -611,7 +571,6 @@ panel-07-header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-07-header-left panel-07-header-center panel-07-header-right";
   grid-area: panel-07-header;
 }
@@ -620,7 +579,6 @@ panel-07-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-header-left;
   }
@@ -629,7 +587,6 @@ panel-07-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-header-center;
     justify-items: center;
@@ -639,7 +596,6 @@ panel-07-header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-header-right;
     justify-items: right;
@@ -649,7 +605,6 @@ panel-07-content {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: ".";
   grid-area: panel-07-content;
 }
@@ -658,7 +613,6 @@ panel-07-footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 0;
-  grid-auto-flow: row;
   grid-template-areas: "panel-07-footer-left panel-07-footer-center panel-07-footer-right";
   grid-area: panel-07-footer;
 }
@@ -667,7 +621,6 @@ panel-07-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-footer-left;
   }
@@ -676,7 +629,6 @@ panel-07-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-footer-center;
     justify-items: center;
@@ -686,7 +638,6 @@ panel-07-footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0 0;
-    grid-auto-flow: row;
     grid-template-areas: ".";
     grid-area: panel-07-footer-right;
     justify-items: right;

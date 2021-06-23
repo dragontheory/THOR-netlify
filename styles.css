@@ -2,9 +2,7 @@
 *:after,
 *,
 ::after,
-::before {
-  box-sizing: border-box;
-}
+::before {box-sizing: border-box;}
 html,
 body {
   margin: 0;
@@ -13,10 +11,68 @@ body {
   color: rgba(255, 255, 255, 0.5);
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 }
-page-container {
-  height: 100vh;
+body {
+	background: linear-gradient(-45deg, #293B5F, #47597E, #1e2c47, #313e56);
+	background-size: 400% 400%;
+	animation: gradient 25s ease infinite;
+	-webkit-animation: gradient 25s ease infinite;
 }
-page-container > * {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
+
+@keyframes gradient {
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+page-container {height: 100vh;}
+page-main {margin: 0 20px;}
+page-header,
+page-footer,
+page-main > * {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+}
+page-header {
+  border-bottom: solid 1px rgba(0,0,0,0.3);
+}
+page-footer {
+  border-top: solid 1px rgba(255,255,255,0.1);
+}
+
+panel-01-header,
+panel-02-header,
+panel-03-header,
+panel-04-header,
+panel-05-header,
+panel-06-header,
+panel-07-header  {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top: solid 1px rgba(255,255,255,0.1);
+  border-left: solid 1px rgba(0,0,0,0.3);
+  border-right: solid 1px rgba(255,255,255,0.1);
+}
+
+panel-01-content,
+panel-02-content,
+panel-03-content,
+panel-04-content,
+panel-05-content,
+panel-06-content,
+panel-07-content {
+  border-left: solid 1px rgba(0,0,0,0.3);
+  border-right: solid 1px rgba(255,255,255,0.1);
+}
+
+panel-01-footer,
+panel-02-footer,
+panel-03-footer,
+panel-04-footer,
+panel-05-footer,
+panel-06-footer,
+panel-07-footer {
+  border-bottom-right-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+  border-bottom: solid 1px rgba(0,0,0,0.3);
+  border-left: solid 1px rgba(0,0,0,0.3);
+  border-right: solid 1px rgba(255,255,255,0.1);
 }
