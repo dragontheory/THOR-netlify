@@ -1,0 +1,22 @@
+*:before,
+*:after,
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+page-container {
+  height: 100vh;
+}
+page-container > * {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+}
