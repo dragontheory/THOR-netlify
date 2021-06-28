@@ -1,0 +1,20 @@
+page-container > * {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+page-header {border-bottom: solid 1px rgba(0,0,0,0.3);}
+page-footer {border-top: solid 1px rgba(255,255,255,0.1);}
+
+panel-01,
+panel-02,
+panel-03,
+panel-04,
+panel-05,
+panel-06,
+panel-07 {
+  border-radius: 5px;
+  border: solid 1px rgba(255,255,255,0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
