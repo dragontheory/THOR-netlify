@@ -11,18 +11,6 @@ body {
   color: rgba(255, 255, 255, 0.5);
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 }
-body {
-	background: linear-gradient(-45deg, #293B5F, #47597E, #1e2c47, #313e56);
-	background-size: 400% 400%;
-	animation: gradient 25s ease infinite;
-	-webkit-animation: gradient 25s ease infinite;
-}
-
-@keyframes gradient {
-	0% {background-position: 0% 50%;}
-	50% {background-position: 100% 50%;}
-	100% {background-position: 0% 50%;}
-}
 page-container {height: 100vh;}
 page-main {margin: 0 20px;}
 page-header,
