@@ -17,6 +17,7 @@
   --component-home-gap: 20px 20px;
   --component-gap: 0 0;
   --component-content-overflow: auto;
+  --display-none: none;
 }
 *:before,
 *:after,
