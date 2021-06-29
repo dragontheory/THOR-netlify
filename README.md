@@ -11,4 +11,5 @@ Mozilla:
 https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 
 ICO:
+https://css-tricks.com/how-to-favicon-in-2021/
 https://icoconvert.com/
