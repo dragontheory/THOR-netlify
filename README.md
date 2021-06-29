@@ -19,3 +19,5 @@ https://icoconvert.com/
 
 Progressive Web Application (PWA):
 https://en.wikipedia.org/wiki/Progressive_web_application
+
+https://www.altexsoft.com/blog/engineering/progressive-web-apps/
