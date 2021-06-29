@@ -7,4 +7,6 @@ https://dev.to/jaredcwhite/custom-elements-everywhere-for-page-layout-parts-i-an
 Firefly background:
 https://codepen.io/dragontheory/pen/rNmNyJz
 
+Mozilla:
+https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 
