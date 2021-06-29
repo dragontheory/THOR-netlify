@@ -17,13 +17,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 
 Hide page-container children 2-5 (panels 01-03) 
 */
-.layout-01 page-container > :nth-child(n+2):nth-child(-n+4) {
-    display: none;
-}
+.layout-01 page-container > :nth-child(n+2):nth-child(-n+4) {display: none;}
 /* Add margin-left to 5th child of page-container (panel-04) */
-.layout-01 page-container > :nth-child(5) {
-    margin-left: 20px;
-}
+.layout-01 page-container > :nth-child(5) {margin-left: 20px;}
 
 @media only screen and (max-width: 600px) {
     .layout-01 page-container {
@@ -36,5 +32,5 @@ Hide page-container children 2-5 (panels 01-03)
         "panel-06"
         "panel-07"
         "page-footer";
-      }
- }
+    }
+}
