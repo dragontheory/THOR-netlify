@@ -1,0 +1,46 @@
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    page-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
+        grid-template-areas:
+        "page-header"
+        "panel-01"
+        "panel-02"
+        "panel-03"
+        "panel-04"
+        "panel-05"
+        "panel-06"
+        "panel-07"
+        "page-footer";
+      }
+      panel-01,
+      panel-02,
+      panel-03,
+      panel-04,
+      panel-05,
+      panel-06,
+      panel-07 {
+        margin: 0 20px;
+      }
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+
+ } 
