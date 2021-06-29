@@ -16,3 +16,6 @@ https://css-tricks.com/how-to-favicon-in-2021/
 https://realfavicongenerator.net/
 
 https://icoconvert.com/
+
+Progressive Web Application (PWA):
+https://en.wikipedia.org/wiki/Progressive_web_application
