@@ -25,3 +25,5 @@ https://www.altexsoft.com/blog/engineering/progressive-web-apps/
 WebManifest:
 
 https://manifest-gen.netlify.app/
+
+https://webhint.io/docs/user-guide/hints/hint-manifest-is-valid/
