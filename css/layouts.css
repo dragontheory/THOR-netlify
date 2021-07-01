@@ -1,0 +1,162 @@
+/* page-header and page-footer are the first and last children of page-container 
+n = begins counting from the start 
+-n = begins counting from the end
+https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child 
+*/
+
+/* .layout-01 = 4 column Metrics dashboard */
+.layout-01 page-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "page-header page-header page-header page-header"
+    "panel-04    panel-05    panel-06    panel-07"
+    "page-footer page-footer page-footer page-footer";
+}
+/* Hide page-container children 2-5 (panels 01-03) */
+/* .layout-01 page-container > :nth-child(n+2):nth-child(-n+4) {display: none;} */
+/* Add margin-left to 5th child of page-container (panel-04) */
+/* .layout-01 page-container > :nth-child(5) {margin-left: 20px;} */
+
+/* @media only screen and (max-width: 600px) {
+    .layout-01 page-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
+        grid-template-areas:
+        "page-header"
+        "panel-04"
+        "panel-05"
+        "panel-06"
+        "panel-07"
+        "page-footer";
+    }
+} */
+
+
+
+#toggle01,
+#toggle02,
+#toggle03,
+#toggle04,
+#toggle05 {display: none;}
+
+label[for*='toggle'] {
+  -webkit-transition: color 250ms;
+  -moz-transition: color 250ms;
+  -ms-transition: color 250ms;
+  -o-transition: color 250ms;
+  position: absolute;
+  top: 15px;
+  cursor: pointer;
+  transition: color 250ms;
+  color: rgba(255,255,255,0.5);
+  padding: 5px 10px;
+}
+
+input#toggle01:checked + label,
+input#toggle02:checked + label,
+input#toggle03:checked + label,
+input#toggle04:checked + label,
+input#toggle05:checked + label {color: rgba(255,255,255,1.0);}
+
+label[for*='toggle']:checked {color: rgba(255,255,255,1.0);}
+label[for*='toggle']:hover {color: rgba(255,255,255,1.0);}
+
+input#toggle01 + label {
+  border-right: solid 1px rgba(255,255,255,0.5);
+  padding-right: 10px;
+  right: 223px;
+}
+input#toggle02 + label {
+  border-right: solid 1px rgba(255,255,255,0.5);
+  padding-right: 10px;
+  right: 169px;
+}
+input#toggle03 + label {
+  border-right: solid 1px rgba(255,255,255,0.5);
+  padding-right: 10px;
+  right: 116px;
+}
+input#toggle04 + label {
+  border-right: solid 1px rgba(255,255,255,0.5);
+  padding-right: 10px;
+  right: 63px;
+}
+input#toggle05 + label {
+  padding-right: 10px;
+  right: 10px;
+}
+
+/* 
+LAYOUT 01 
+*/
+input#toggle01:checked ~ page-container { 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "page-header page-header page-header"
+  "panel-05    panel-06    panel-07"
+  "page-footer page-footer page-footer";
+}
+input#toggle01:checked ~ page-container > :nth-child(n+2):nth-child(-n+5) {display: none;}
+input#toggle01:checked ~ page-container > :nth-child(6) {margin-left: 20px;}
+
+@media only screen and (max-width: 600px) {
+  input#toggle01:checked ~ page-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    grid-template-areas:
+    "page-header"
+    "panel-05"
+    "panel-06"
+    "panel-07"
+    "page-footer";
+  }
+}
+/* 
+LAYOUT 02 
+*/
+input#toggle02:checked ~ page-container { 
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+    "page-header page-header"
+    "panel-01    panel-02"
+    "page-footer page-footer";
+  }
+  input#toggle02:checked ~ page-container > :nth-child(n+4):nth-child(-n+8) {display: none;}
+  input#toggle02:checked ~ page-container > :nth-child(3) {margin-right: 20px;}
+  
+  @media only screen and (max-width: 600px) {
+    input#toggle02:checked ~ page-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr 1fr auto;
+      grid-template-areas:
+      "page-header"
+      "panel-01"
+      "panel-02"
+      "page-footer";
+    }
+  }
+  /* 
+LAYOUT 03 
+*/
+input#toggle03:checked ~ page-container { 
+    grid-template-columns: 250px 1fr 300px;
+    grid-template-areas:
+    "page-header page-header page-header"
+    "panel-01    panel-02    panel-03"
+    "page-footer page-footer page-footer";
+  }
+  input#toggle03:checked ~ page-container > :nth-child(n+5):nth-child(-n+8) {display: none;}
+  input#toggle03:checked ~ page-container > :nth-child(4) {margin-right: 20px;}
+  
+  @media only screen and (max-width: 600px) {
+    input#toggle03:checked ~ page-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr 1fr 1fr auto;
+      grid-template-areas:
+      "page-header"
+      "panel-01"
+      "panel-02"
+      "panel-03"
+      "page-footer";
+    }
+  }
